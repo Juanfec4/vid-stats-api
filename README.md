@@ -13,3 +13,5 @@ To run this project, you will need to add the following environment variables to
 `ALLOW_REGISTER` = TRUE | FALSE
 
 `PORT` = NUMBER
+
+`ORIGIN` = Front end origin

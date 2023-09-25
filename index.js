@@ -19,6 +19,9 @@ const app = express();
 //CORS
 app.use(CORS);
 
+//Reference
+app.use(express.static("static"));
+
 //Middleware
 app.use(express.json());
 app.use("/", auth);

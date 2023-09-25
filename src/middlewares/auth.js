@@ -22,7 +22,7 @@ middleware.use(async (req, res, next) => {
   //Check if key is not valid or missing
   if (!api_key || !validators.isValidKey(api_key, storedKeys)) {
     return res.status(400).json({
-      message: `invalid [x-api-key], send a POST request to '/register' to generate one.`,
+      message: `invalid [x-api-key], send a POST request to '/api/register' to generate one.`,
     });
   }
   next();

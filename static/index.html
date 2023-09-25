@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>VidStats API Reference</title>
+  </head>
+  <body>
+    <main>
+      <section class="site-identity">
+        <h1 class="site-identity__title">VidStats API</h1>
+      </section>
+      <section class="intro">
+        <h2 class="intro__title">Introduction</h2>
+        <p class="intro__text">
+          VidStats API is a REST API that utilizes Whisper AI (Open AI) to
+          generate video transcriptions. The user provides a valid (shorter than
+          3 minutes) youtube video link, and the server downloads the file,
+          transcribes it and sends back a response with key details, and some
+          stats derived from the text-version of the video.
+        </p>
+      </section>
+      <section class="reference">
+        <h2 class="reference__title">API Reference</h2>
+        <div class="reference__endpoint">
+          <h3 class="reference__sub-title">Registration</h3>
+          <p class="reference__description">Used to get an "x-api-key".</p>
+          <pre class="reference__code-snippet"><code>POST /register</code></pre>
+          <div class="reference__endpoint-info">
+            <span>
+              <h4 class="reference__endpoint-params">Parameters</h4>
+              <ul class="reference__endpoint-detail-list">
+                <li class="reference__endpoint-detail-item">name</li>
+                <li class="reference__endpoint-detail-item">email</li>
+              </ul>
+            </span>
+            <span>
+              <h4 class="reference__endpoint-response">Response</h3>
+              <pre class="reference__code-snippet">
+{
+    "name":"your name",
+    "email":"your email"
+    "x-api-key": "your api key"
+}
+            </pre
+              >
+            </span>
+          </div>
+        </div>
+        <div class="reference__endpoint">
+          <h3 class="reference__sub-title">Get video Stats</h3>
+          <p class="reference__description">
+            Used to get video stats from a specific video by passing in the
+            video's url. (max 3 minutes).
+          </p>
+          <pre class="reference__code-snippet"><code>GET /api/video</code></pre>
+          <div>
+            <span>
+              <h4 class="reference__endpoint-params">Query parameters</h4>
+              <ul class="reference__endpoint-detail-list">
+                <li class="reference__endpoint-detail-item">video_url</li>
+              </ul>
+            </span>
+            <span>
+              <h4 class="reference__endpoint-response">Response</h3>
+              <pre class="reference__code-snippet">
+{
+    "video": {
+    "channel": "channel name",
+    "title": "video title",
+    "upload_date": "number",
+    "view_count": "number",
+    "thumbnail": "thumbnail url",
+    "description": "description",
+    "transcription": "transcribed audio",
+        "stats": {
+            "occurrences": {
+                "1": [
+                    "[array]"
+                    ],
+                "2": [
+                    "[array]"
+                    ], "[...]"
+            },
+            "longest_word": "string",
+            "shortest_word": "string",
+            "avg_word_length": "number",
+            "vocabulary_richness": "score from 0 to 1",
+            "most_common_prefix": "string",
+            "most_common_suffix": "string",
+            "common_bigrams": "string"
+            }
+    }
+}
+              </pre>
+            </span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

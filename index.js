@@ -32,6 +32,14 @@ app.use("/api", rateLimit);
 app.use("/register", register);
 app.use("/api/video", video);
 
+//404 Handling
+app.use((req, res) => {
+  res.status(404).json({
+    message:
+      "404: Not Found (the resource you are requesting could not be found on the server) ",
+  });
+});
+
 //Server information
 const PORT = process.env.PORT ? process.env.PORT : 3000;
 const HOSTNAME = `http://${ip.address()}:${PORT}`;

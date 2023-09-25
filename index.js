@@ -34,7 +34,7 @@ app.use("/api/video", video);
 
 //404 Handling
 app.use((req, res) => {
-  res.status(404).json({
+  return res.status(404).json({
     message:
       "404: Not Found (the resource you are requesting could not be found on the server) ",
   });

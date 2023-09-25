@@ -16,7 +16,7 @@
 ## Install
 
 ```sh
-npm install
+npm run build
 ```
 
 ## Usage
@@ -42,6 +42,81 @@ To run this project, you will need to add the following environment variables to
 `PORT` = NUMBER
 
 `ORIGIN` = Front end origin
+
+## API Reference
+
+### Register API
+
+```http
+  POST /register
+```
+
+| Parameter | Type     | Description               |
+| :-------- | :------- | :------------------------ |
+| `name`    | `string` | **Required**. Your name.  |
+| `email`   | `string` | **Required**. Your email. |
+
+#### Response
+
+```json
+ {
+    "name":"<your name>",
+    "email":"<your email>"
+    "x-api-key": "<your api key>"
+ }
+```
+
+### Get Video stats
+
+```http
+  GET /api/video
+```
+
+| Query parameter | Type     | Description                      |
+| :-------------- | :------- | :------------------------------- |
+| `video_url`     | `string` | **Required**. YouTube video URL. |
+
+- Will only accept videos shorter than 3 minutes.
+
+#### Request Headers
+
+| Header         | Type     | Description                       |
+| :------------- | :------- | :-------------------------------- |
+| `x-api-key`    | `string` | **Required**. API key.            |
+| `content-type` | `string` | **Required**. "application/json". |
+
+#### Response
+
+```json
+{
+    "video": {
+        "channel": "<channel name>",
+        "title": "<video title>",
+        "upload_date": "20230925",
+        "view_count": 59415,
+        "thumbnail": "<thumbnail url>",
+        "description": "<description>",
+        "transcription": "<transcribed audio>",
+        "stats": {
+            "occurrences": {
+                "1": [
+                    "<array>"
+                ],
+                "2": [
+                    "<array>"
+                ], <...>
+            },
+            "longest_word": "<string>",
+            "shortest_word": "<string>",
+            "avg_word_length": <number>,
+            "vocabulary_richness": <score from 0 to 1>,
+            "most_common_prefix": "<string>",
+            "most_common_suffix": "<string>",
+            "common_bigrams": "<string>"
+        }
+    }
+}
+```
 
 ## Author
 

@@ -79,20 +79,23 @@ export const generateVidObject = async (obj) => {
   const filePath = await downloadAudio(audioUrl, "webm");
 
   // Transcribe the audio
-  const transcriptData = await transcribeAudio(filePath);
-  const stats = await pullStats(transcriptData.text);
-
-  // Clean up: delete the downloaded audio file to save space (optional)
-  fs.unlinkSync(filePath);
-
-  return {
-    channel: obj?.channel,
-    title: obj?.fulltitle,
-    upload_date: obj?.upload_date,
-    view_count: obj?.view_count,
-    thumbnail: obj?.thumbnail,
-    description: obj?.description,
-    transcription: transcriptData.text,
-    stats: stats,
-  };
+  try {
+    const transcriptData = await transcribeAudio(filePath);
+    const stats = await pullStats(transcriptData.text);
+    // Clean up: delete the downloaded audio file to save space (optional)
+    fs.unlinkSync(filePath);
+    return {
+      channel: obj?.channel,
+      title: obj?.fulltitle,
+      upload_date: obj?.upload_date,
+      view_count: obj?.view_count,
+      thumbnail: obj?.thumbnail,
+      description: obj?.description,
+      transcription: transcriptData.text,
+      stats: stats,
+    };
+  } catch (e) {
+    fs.unlinkSync(filePath);
+    return null;
+  }
 };

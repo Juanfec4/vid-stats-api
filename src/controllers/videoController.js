@@ -13,7 +13,7 @@ const YT_CONFIG = {
 const MAX_DURATION = 3;
 
 const handleGetVideo = async (req, res) => {
-  const { video_url } = req.body;
+  const { video_url } = req.query;
   //No param for video_url
   if (!video_url) {
     return res.status(400).json({
@@ -35,6 +35,12 @@ const handleGetVideo = async (req, res) => {
   }
 
   video = await generateVidObject(video);
+
+  if (video === null) {
+    return res.status(500).json({
+      message: `OPEN AI Server error. Please try again later.`,
+    });
+  }
 
   return res.status(200).json({
     video,

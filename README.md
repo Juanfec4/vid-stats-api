@@ -35,7 +35,7 @@ To run this project, you will need to add the following environment variables to
 | `DB_USER`        | `string`  | **Required**. Mongodb user.                |
 | `DB_PASS`        | `string`  | **Required**. Mongodb password.            |
 | `OPENAI_API_KEY` | `string`  | **Required**. Api key.                     |
-| `ALLOW_REGISTER` | `boolean` | **Required**. True OR False.               |
+| `ALLOW_REGISTER` | `boolean` | **Required**. `True` or `False`.           |
 | `PORT`           | `number`  | **Required**. Port.                        |
 | `ORIGIN`         | `string`  | **Required**. Front end origin (for CORS). |
 

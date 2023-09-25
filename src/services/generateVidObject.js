@@ -6,6 +6,7 @@ import FormData from "form-data";
 import { pullStats } from "./pullStats.js";
 
 const OUTPUT_FOLDER = "tmp";
+const OPEN_AI_URL = "https://api.openai.com/v1/audio/transcriptions";
 
 //Create folder tmp if it does not exist
 const createFolder = () => {
@@ -54,11 +55,7 @@ const transcribeAudio = async (audioFilePath) => {
   };
 
   try {
-    const response = await axios.post(
-      "https://api.openai.com/v1/audio/transcriptions",
-      formData,
-      config
-    );
+    const response = await axios.post(OPEN_AI_URL, formData, config);
     return response.data;
   } catch (error) {
     console.error(

@@ -92,8 +92,8 @@ To run this project, you will need to add the following environment variables to
     "video": {
         "channel": "<channel name>",
         "title": "<video title>",
-        "upload_date": "20230925",
-        "view_count": 59415,
+        "upload_date": "<number>",
+        "view_count": "<number>",
         "thumbnail": "<thumbnail url>",
         "description": "<description>",
         "transcription": "<transcribed audio>",
@@ -104,12 +104,12 @@ To run this project, you will need to add the following environment variables to
                 ],
                 "2": [
                     "<array>"
-                ], <...>
+                ], "<...>"
             },
             "longest_word": "<string>",
             "shortest_word": "<string>",
-            "avg_word_length": <number>,
-            "vocabulary_richness": <score from 0 to 1>,
+            "avg_word_length": "<number>",
+            "vocabulary_richness": "<score from 0 to 1>",
             "most_common_prefix": "<string>",
             "most_common_suffix": "<string>",
             "common_bigrams": "<string>"

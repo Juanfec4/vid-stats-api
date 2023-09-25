@@ -25,17 +25,32 @@ npm install
 npm run start
 ```
 
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`DB_CLIENT` = mongodb url
+
+`DB_USER` = mongodb user
+
+`DB_PASS` = mongodb password
+
+`OPENAI_API_KEY` = API KEY
+
+`ALLOW_REGISTER` = TRUE | FALSE
+
+`PORT` = NUMBER
+
+`ORIGIN` = Front end origin
+
 ## Author
 
 👤 **Juan F. Cardenas**
 
-* Website: https://portfolio-site-juanfec4.vercel.app/
-* Github: [@Juanfec4](https://github.com/Juanfec4)
-* LinkedIn: [@juan-cardenas-aa8a04258](https://linkedin.com/in/juan-cardenas-aa8a04258)
+- Website: https://portfolio-site-juanfec4.vercel.app/
+- Github: [@Juanfec4](https://github.com/Juanfec4)
+- LinkedIn: [@juan-cardenas-aa8a04258](https://linkedin.com/in/juan-cardenas-aa8a04258)
 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_

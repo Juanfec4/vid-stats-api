@@ -45,7 +45,7 @@ To run this project, you will need to add the following environment variables to
 
 ### Register API
 
-Used to get an "x-api-key". (currently disabled by .env).
+Used to get an "x-api-key". (currently disabled by `.env` file).
 
 ```http
   POST /register

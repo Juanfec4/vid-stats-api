@@ -3,6 +3,7 @@ import https from "https";
 import { randomUUID } from "crypto";
 import axios from "axios";
 import FormData from "form-data";
+import { pullStats } from "./pullStats.js";
 
 const OUTPUT_FOLDER = "tmp";
 
@@ -82,6 +83,7 @@ export const generateVidObject = async (obj) => {
 
   // Transcribe the audio
   const transcriptData = await transcribeAudio(filePath);
+  const stats = await pullStats(transcriptData.text);
 
   // Clean up: delete the downloaded audio file to save space (optional)
   fs.unlinkSync(filePath);
@@ -93,6 +95,7 @@ export const generateVidObject = async (obj) => {
     view_count: obj?.view_count,
     thumbnail: obj?.thumbnail,
     description: obj?.description,
-    transcription: transcriptData?.transcriptions?.[0]?.text,
+    transcription: transcriptData.text,
+    stats: stats,
   };
 };

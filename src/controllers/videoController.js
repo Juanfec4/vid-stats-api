@@ -33,6 +33,7 @@ const handleGetVideo = async (req, res) => {
       message: `Video too long, (since the system uses OPEN AI there's a cap set to ${MAX_DURATION} minutes), uploaded video is ${video.duration_string} long.`,
     });
   }
+
   video = await generateVidObject(video);
 
   return res.status(200).json({

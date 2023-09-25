@@ -1,17 +1,41 @@
-## Environment Variables
+<h1 align="center">Welcome to VidStats API 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.1-blue.svg?cacheSeconds=2592000" />
+  <a href="https://github.com/Juanfec4/vid-stats-api" target="_blank">
+    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
+  </a>
+  <a href="#" target="_blank">
+    <img alt="License: ISC" src="https://img.shields.io/badge/License-ISC-yellow.svg" />
+  </a>
+</p>
 
-To run this project, you will need to add the following environment variables to your .env file
+> REST API that enables Youtube video transcriptions & analysis.
 
-`DB_CLIENT` = mongodb url
+### ✨ [Demo](https://vid-stats-api.onrender.com)
 
-`DB_USER` = mongodb user
+## Install
 
-`DB_PASS` = mongodb password
+```sh
+npm install
+```
 
-`OPENAI_API_KEY` = API KEY
+## Usage
 
-`ALLOW_REGISTER` = TRUE | FALSE
+```sh
+npm run start
+```
 
-`PORT` = NUMBER
+## Author
 
-`ORIGIN` = Front end origin
+👤 **Juan F. Cardenas**
+
+* Website: https://portfolio-site-juanfec4.vercel.app/
+* Github: [@Juanfec4](https://github.com/Juanfec4)
+* LinkedIn: [@juan-cardenas-aa8a04258](https://linkedin.com/in/juan-cardenas-aa8a04258)
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_

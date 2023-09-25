@@ -29,23 +29,21 @@ npm run start
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`DB_CLIENT` = mongodb url
-
-`DB_USER` = mongodb user
-
-`DB_PASS` = mongodb password
-
-`OPENAI_API_KEY` = API KEY
-
-`ALLOW_REGISTER` = TRUE | FALSE
-
-`PORT` = NUMBER
-
-`ORIGIN` = Front end origin
+| Variable         | Type      | Description                                |
+| :--------------- | :-------- | :----------------------------------------- |
+| `DB_CLIENT`      | `string`  | **Required**. Mongodb url.                 |
+| `DB_USER`        | `string`  | **Required**. Mongodb user.                |
+| `DB_PASS`        | `string`  | **Required**. Mongodb password.            |
+| `OPENAI_API_KEY` | `string`  | **Required**. Api key.                     |
+| `ALLOW_REGISTER` | `boolean` | **Required**. True OR False.               |
+| `PORT`           | `number`  | **Required**. Port.                        |
+| `ORIGIN`         | `string`  | **Required**. Front end origin (for CORS). |
 
 ## API Reference
 
 ### Register API
+
+Used to get an "x-api-key". (currently disabled by .env).
 
 ```http
   POST /register
@@ -67,6 +65,8 @@ To run this project, you will need to add the following environment variables to
 ```
 
 ### Get Video stats
+
+Used to get video stats from a specific video by passing in the video's url. (max 3 minutes).
 
 ```http
   GET /api/video

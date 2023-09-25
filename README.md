@@ -29,7 +29,7 @@ npm run start
 
 ## Environment Variables
 
-To run this project, you will need to add the following environment variables to your .env file
+To run this project, you will need to add the following environment variables to your `.env` file
 
 | Variable         | Type      | Description                                |
 | :--------------- | :-------- | :----------------------------------------- |
@@ -45,7 +45,7 @@ To run this project, you will need to add the following environment variables to
 
 ### Register API
 
-Used to get an "x-api-key". (currently disabled by `.env` file).
+Used to get an "x-api-key". (currently disabled by `.env`).
 
 ```http
   POST /register

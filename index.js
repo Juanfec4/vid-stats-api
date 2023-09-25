@@ -6,6 +6,7 @@ import mongoose from "mongoose";
 import logger from "./src/config/morganConfig.js";
 
 //Modules
+import CORS from "./src/middlewares/allowCors.js";
 import connectDB from "./src/config/dbConnection.js";
 import auth from "./src/middlewares/auth.js";
 import rateLimit from "./src/middlewares/rateLimit.js";
@@ -14,6 +15,9 @@ import video from "./src/routes/video.js";
 
 //Server
 const app = express();
+
+//CORS
+app.use(CORS);
 
 //Middleware
 app.use(express.json());

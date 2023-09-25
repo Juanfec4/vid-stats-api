@@ -11,7 +11,7 @@
 
 > REST API that enables Youtube video transcriptions & analysis.
 
-VidStats API is a REST API that utilizes Whisper AI (Open AI) to generate video transcriptions. The user provides a valid (shorter than 3 minutes) youtube video link, and the server downloads the vile, transcribes it and sends back a response with key details, and some stats derived from the text-version of the video.
+VidStats API is a REST API that utilizes Whisper AI (Open AI) to generate video transcriptions. The user provides a valid (shorter than 3 minutes) youtube video link, and the server downloads the file, transcribes it and sends back a response with key details, and some stats derived from the text-version of the video.
 
 ### ✨ [Demo](https://vid-stats-api.onrender.com)
 

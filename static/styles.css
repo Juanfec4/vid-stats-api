@@ -61,6 +61,7 @@ h2{
     padding: 1rem;
     color: lightgrey;
     font-family: 'Source Code Pro', monospace;
+    overflow-x: scroll;
 }
 
 .button{

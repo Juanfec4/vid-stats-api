@@ -29,22 +29,48 @@ const isValidKey = (api_key, hashed_keys) => {
 
 //Check if video is under x mins
 const isValidDuration = (duration_string, x) => {
-  const parts = duration_string.split(":").map(Number);
+  // Check if the string is just a number (seconds)
+  const isJustNumber = /^\d+$/.test(duration_string);
+  let parts;
+  if (isJustNumber) {
+    parts = [Number(duration_string)];
+  } else {
+    parts = duration_string
+      .split(":")
+      .map((part) => {
+        const num = Number(part);
+        return !isNaN(num) ? num : null;
+      })
+      .filter((num) => num !== null);
+  }
 
   let hours = 0,
     minutes = 0,
     seconds = 0;
 
-  // Determine the format based on the number of parts
-  if (parts.length === 3) {
-    [hours, minutes, seconds] = parts;
+  if (parts.length === 1) {
+    seconds = parts[0];
   } else if (parts.length === 2) {
     [minutes, seconds] = parts;
+  } else if (parts.length === 3) {
+    [hours, minutes, seconds] = parts;
   } else {
-    throw new Error(`Invalid duration_string format ${duration_string}`);
+    return false; // Invalid format
   }
 
-  // Convert the duration to total minutes
+  if (
+    !Number.isInteger(hours) ||
+    hours < 0 ||
+    !Number.isInteger(minutes) ||
+    minutes < 0 ||
+    minutes >= 60 ||
+    !Number.isInteger(seconds) ||
+    seconds < 0 ||
+    seconds >= 60
+  ) {
+    return false; // Invalid time
+  }
+
   const totalDurationInMinutes = hours * 60 + minutes + seconds / 60;
 
   return totalDurationInMinutes < x;

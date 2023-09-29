@@ -18,7 +18,6 @@ const app = express();
 
 //CORS
 app.use(CORS);
-app.set("trust proxy", true);
 //Reference
 app.use(express.static("static"));
 

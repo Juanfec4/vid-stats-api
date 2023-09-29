@@ -41,7 +41,7 @@ const isValidDuration = (duration_string, x) => {
   } else if (parts.length === 2) {
     [minutes, seconds] = parts;
   } else {
-    throw new Error("Invalid duration_string format");
+    throw new Error(`Invalid duration_string format ${duration_string}`);
   }
 
   // Convert the duration to total minutes

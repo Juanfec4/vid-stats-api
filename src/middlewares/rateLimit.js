@@ -5,7 +5,7 @@ const MAX_REQUESTS = 5;
 
 const middleware = rateLimit({
   windowMs: TIME_MINUTES * 60 * 1000,
-  max: MAX_REQUESTS,
+  limit: MAX_REQUESTS,
   standardHeaders: true,
   legacyHeaders: false,
   message: {
